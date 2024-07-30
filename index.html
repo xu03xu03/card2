@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>卡片排列</title>
+    <!-- 引入外部的CSS樣式表 -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <body>
+        <div>
+          <h1>請選擇三個字母，並且按照志願排序</h1>
+        
+            <h2 class="result" id="result">您所選擇的字母是：</h2>
+        </div>
+        <div class="container">
+            <!-- 第一張卡牌開始 -->
+         <div class="card" data-letter="S">
+           <div class="img-box">
+             <img src="https://plus.unsplash.com/premium_photo-1679429321023-dff2ea455b0c?dpr=2&w=306&auto=format&fit=crop&q=60&crop=entropy&cs=tinysrgb&fm=jpg&ixid=M3wxMjA3fDB8MXxzZWFyY2h8Nnx8aGVscHxlbnwwfDB8fHwxNzIwMDY1MzUwfDE&ixlib=rb-4.0.3" alt="">
+           </div>
+           <div class="text-box">
+            <h2>助人者Social</h2>
+            <p>#社工心理#教育#醫護#宗教</p>
+           </div>
+           <!-- 第一張卡牌隱藏內容 -->
+           <div class="checkmark">✔</div>
+        <div class="card-description">助人者個性友善且極具包容力，喜歡和人 互動與幫助他人。關懷社會、生態或周圍 的人群，經常教導、協助、照顧別人、解決 他人的困難懂得傾聽與溝通,擅長解決 人際衝突。在生涯選擇上適合與人互、 協助他人和教導培訓等工作。
+            <p>
+            【優勢】
+            
+            協調人際活動
+            發現與解決他人問題
+            優秀的人際與情緒管理能力</p>
+            <p>
+            【典型對應職業】
+            
+            教育、社工心理、醫護或宗教等領域</p>
+            <div class="btn">
+                <button class="number-btn" onclick="markCard(this, '1')">1</button>
+                <button class="number-btn" onclick="markCard(this, '2')">2</button>
+                <button class="number-btn" onclick="markCard(this, '3')">3</button>
+            </div>
+            <button class="cancel-btn" onclick="unmarkCard(this)">取消</button>
+        </div>
+
+           <button class="toggle-btn" onclick="toggleDescription(this)">
+           <span class="arrow">→</span>
+           <span class="cross">×</span>
+           </button>
+         </div>
+         <!-- 第二張卡牌開始 -->
+           <div class="card" data-letter="E">
+           <div class="img-box">
+             <img src="https://images.unsplash.com/photo-1493612276216-ee3925520721?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGVudGVycHJpc2V8ZW58MHx8MHx8fDA%3D" alt="">
+           </div>
+           <div class="text-box">
+             <h2>影響者Enterprising</h2>
+             <p>#企管領導#行銷企劃#法律#政治</p>
+           </div>
+           <!-- 第二張卡牌隱藏內容 -->
+           <div class="card-description">影響者自信果敢且充滿精力，勇於競爭與 冒險，喜歡商業活動與策。擅長運用自 己的資源和能力影響或說服別人，讓別人 贊同自己提出的想法或執行方式。適合當 企業家，鼓舞他人合作並發起計劃。在生 涯選擇上，會追求聲望地位較高的工作。
+            <p>
+
+            【優勢】
+            
+            能找出商業或獲利機會
+            適合管理與監督工作
+            具有銷售與說服技巧的潛力</p>
+            
+            <p>【典型對應職業】
+            
+            企管領導、行銷企劃、法律政治等領域</p>
+            <div class="btn">
+                <button class="number-btn" onclick="markCard(this, '1')">1</button>
+                <button class="number-btn" onclick="markCard(this, '2')">2</button>
+                <button class="number-btn" onclick="markCard(this, '3')">3</button>
+            </div>
+                <button class="cancel-btn" onclick="unmarkCard(this)">取消</button>
+        </div>
+            <button class="toggle-btn" onclick="toggleDescription(this)">
+            <span class="arrow">→</span>
+            <span class="cross">×</span>
+            </button>
+         </div>
+         <!-- 第三張卡牌開始 -->
+           <div class="card" data-letter="R">
+           <div class="img-box">
+             <img src="https://media.istockphoto.com/id/1754629749/photo/social-and-media-issue.webp?b=1&s=170667a&w=0&k=20&c=Wo1JgbE4f5xQ_ejMuK3P37iqc2RiyQea9YX_UvSI338=" alt="">
+           </div>
+           <div class="text-box">
+            <h2>實踐者Realistic</h2>
+            <p>#機械電子#農林漁牧#建築工藝#運動</p>
+           </div>
+           <!-- 第三張卡牌隱藏內容 -->
+           <div class="card-description">實踐者注重實際行動，常獨自完成任務 喜歡機械或可操作的工具。喜歡戶外活動 、肢體運動和各種冒險探索。面對問題時， 比起討論或空想，更喜歡直接當試。在生 涯選擇上，喜歡能產生具體作品或成果的 工作。
+            <p>
+            【優勢】
+            
+            機械與設備操作,對工具運用、設備操作、廚藝手工與飼動物有天賦</p>
+            
+            <p>
+            【典型對應職業】
+            
+            機械電子、農林漁牧、運動或建築工藝領域</p>
+            <div class="btn">
+                <button class="number-btn" onclick="markCard(this, '1')">1</button>
+                <button class="number-btn" onclick="markCard(this, '2')">2</button>
+                <button class="number-btn" onclick="markCard(this, '3')">3</button>
+            </div>
+                <button class="cancel-btn" onclick="unmarkCard(this)">取消</button>
+        </div>
+            <button class="toggle-btn" onclick="toggleDescription(this)">
+            <span class="arrow">→</span>
+            <span class="cross">×</span>
+            </button>
+         </div>
+         <!-- 第四張卡牌開始 -->
+          <div class="card" data-letter="I">
+           <div class="img-box">
+             <img src="https://media.istockphoto.com/id/1943057431/photo/boy-investigating-water-with-magnifying-glass.webp?b=1&s=170667a&w=0&k=20&c=uJHY_UhPDh47xvGN_jT5ltwektLYR8MhQeoMehr_cdQ=" alt="">
+           </div>
+           <div class="text-box">
+            <h2>思考者Investigative</h2>
+            <p>#統計分析#人文科學
+              <br>
+              #理工研究#生醫研發</p>
+           </div>
+           <!-- 第四張卡牌隱藏內容 -->
+           <div class="card-description">思考者好奇心強，喜歡分析、思考與解決 複雜問題。擅長觀察、構想、追尋真理並提 出各種假設，常接觸人文科學或科技領域 的資訊。在資料分析與理論建構方面，是 不可多得的人才。在生涯選擇上，喜歡需 要思考與研究的專業工作。
+
+            <p>【優勢】
+            
+            理解、解決科學或數學問題
+            研究分析與解釋資料、構想與理論
+            抽象思考</p>
+            
+            <p>【典型對應職業】
+            
+            理工生醫或人文科學領域</p>
+            <div class="btn">
+                <button class="number-btn" onclick="markCard(this, '1')">1</button>
+                <button class="number-btn" onclick="markCard(this, '2')">2</button>
+                <button class="number-btn" onclick="markCard(this, '3')">3</button>
+            </div>
+                <button class="cancel-btn" onclick="unmarkCard(this)">取消</button>
+        </div>
+            <button class="toggle-btn" onclick="toggleDescription(this)">
+            <span class="arrow">→</span>
+            <span class="cross">×</span>
+            </button>
+         </div>
+         <!-- 第五張卡牌開始 -->
+          <div class="card" data-letter="A">
+           <div class="img-box">
+             <img src="https://images.unsplash.com/photo-1613574714687-c33b9e90200d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8QXJ0aXN0aWN8ZW58MHx8MHx8fDA%3D" alt="">
+           </div>
+           <div class="text-box">
+            <h2>創造者Artistic</h2>
+            <p>#造型設計#藝術設計#藝術家#導演</p>
+           </div>
+           <!-- 第五張卡牌隱藏內容 -->
+           <div class="card-description">創造者充滿創意與想像力，總是有很多新 穎的想法。喜歡設計、戲劇、文學、舞蹈、音 樂等活動。具有強大的直覺與靈感，對美 的追求更勝於科學。在生涯選擇上，喜歡 待在充滿變化與挑戰的環境，讓自己的獨 特性能充分發揮。
+
+            <p>【優勢】
+            
+            運用想像力與創造力產生靈感
+            做事創新、彈性而靈活
+            善於設計與創造，具有文藝天賦</p>
+            
+            <p>【典型對應職業】
+            
+            藝術、設計等領域</p>
+            <div class="btn">
+                <button class="number-btn" onclick="markCard(this, '1')">1</button>
+                <button class="number-btn" onclick="markCard(this, '2')">2</button>
+                <button class="number-btn" onclick="markCard(this, '3')">3</button>
+            </div>
+                <button class="cancel-btn" onclick="unmarkCard(this)">取消</button>
+        </div>
+            <button class="toggle-btn" onclick="toggleDescription(this)">
+            <span class="arrow">→</span>
+            <span class="cross">×</span>
+            </button>
+         </div>
+         <!-- 第六張卡牌開始 -->
+          <div class="card" data-letter="C">
+           <div class="img-box">
+             <img src="https://media.istockphoto.com/id/1696390714/photo/online-survey-filling-out-and-digital-form-checklist-quality-check-improvement.webp?b=1&s=170667a&w=0&k=20&c=4zoKiuAW_5vmkP23TXzoyzIK6zbS06zlHdoTTvy2DM8=" alt="">
+           </div>
+           <div class="text-box">
+            <h2>組織者Conventional</h2>
+            <p>#財務金融#特助秘書#會計#行政</p>
+           </div>
+           <!-- 第六張卡牌隱藏內容 -->
+           <div class="card-description">組織者喜歡有系統、組織和效率的SOP 工作方式無法接受混高、沒有秩序的環 境,在乎事情的精確細節並一絲不苟。在 生涯選擇上偏好規則清楚且明的環境 ,善於透過行政處理讓事情順利運轉。
+
+            <p>【優勢】
+            
+            善於數字運算 資訊處理、組織、規劃與統整 文書、行政方面具備精確的處理技巧</p>
+            
+            <p>【典型對應職業】
+            
+            財務金融、特助秘書、會計、行政等領域</p>
+            <div class="btn">
+                <button class="number-btn" onclick="markCard(this, '1')">1</button>
+                <button class="number-btn" onclick="markCard(this, '2')">2</button>
+                <button class="number-btn" onclick="markCard(this, '3')">3</button>
+            </div>
+                <button class="cancel-btn" onclick="unmarkCard(this)">取消</button>
+        </div>
+            <button class="toggle-btn" onclick="toggleDescription(this)">
+            <span class="arrow">→</span>
+            <span class="cross">×</span>
+            </button>
+         </div>
+          </div>
+          <!-- 查看選擇結果的按鈕 -->
+           <button class="result-button" id="resultButton" onclick="showResults()">查看測驗結果</button>
+          
+          <!-- 引入外部的JavaScript文件 -->
+            <script src="scripts.js"></script>
+     </body>
+            
+</html>

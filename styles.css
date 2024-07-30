@@ -1,0 +1,163 @@
+body{
+  background-color: bisque;
+
+}
+h1{
+    text-align:center;
+    font-size: 30px;
+    padding: 10px;
+  }
+  h2{
+    text-align:center;
+    font-size: 25px;
+    
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 三列佈局 */
+    gap: 20px; /* 卡片間距 */
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto; /* 中心對齊 */
+  }
+  .card{
+    width: 300px;
+    box-shadow:1px 1px 5px 2px #adb5bd;
+    padding: 15px;
+    border-radius:15px;
+    position: relative;
+  }
+  .card img{
+    width: 100%;
+    border-radius:15px;
+    aspect-ratio:1;
+    object-fit:cover;
+    object-position:center;
+  }
+  .card h2{
+    color: #dc3545;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align:center;
+   }
+   .card p{
+    color: #6c757d;
+    font-weight: bold;
+    font-size: 20px;
+    text-align:center;
+   }
+  /* 卡片介紹內容的樣式 */
+  .card-description {
+    display: none; /* 初始狀態為隱藏 */
+    margin-top: 20px; /* 與卡片內容間距 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    flex-direction: column; /* 垂直佈局 */
+    
+}
+.btn{
+    display: flex;
+}
+  /* 數字按鈕的樣式 */
+.number-btn, .cancel-btn {
+    margin: 10px; /* 按鈕間距 */
+    padding: 10px 20px; /* 內邊距 */
+    font-size: 16px; /* 字體大小 */
+    cursor: pointer; /* 游標樣式 */
+    border-radius: 10px;
+    box-shadow:1px 1px 5px 2px #adb5bd;
+    border: none;
+    
+}
+
+/*取消按鈕的樣式 */
+.cancel-btn {
+   
+    background-color: red; /* 背景顏色 */
+    color: white; /* 字體顏色 */
+}
+
+
+/* 切換按鈕的樣式 */
+.toggle-btn {
+    position: absolute; /* 絕對定位 */
+    top: 320px; /* 底部間距 */
+    right: 10px; /* 右側間距 */
+    background-color: #fff; /* 背景顏色 */
+    border: 1px solid #ccc; /* 邊框 */
+    border-radius: 50%; /* 圓形 */
+    width: 30px; /* 寬度 */
+    height: 30px; /* 高度 */
+    display: flex; /* 彈性佈局 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    cursor: pointer; /* 游標樣式 */
+}
+
+/* 箭頭圖示 */
+.arrow {
+    font-size: 18px; /* 字體大小 */
+    display: block; /* 顯示 */
+}
+
+/* 叉叉圖示 */
+.cross {
+    font-size: 18px; /* 字體大小 */
+    display: none; /* 初始狀態為隱藏 */
+}
+.checkmark {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: red;
+    display: none;
+}
+
+
+  /* 切換狀態的樣式 */
+ 
+  .show .card-description {
+    display: flex;
+}
+
+.show .arrow {
+    display: none;
+}
+
+.show .cross {
+    display: block;
+}
+
+.marked .checkmark {
+    display: block;
+}
+.card.selected {
+  background-color: #d0ffd0; /* 選擇後卡片的背景顏色 */
+}
+.result-button {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #d0ffd0;
+  box-shadow:1px 1px 5px 2px #adb5bd;
+  color: #6c757d;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;/* 游標樣式 */
+}
+ /* 不能選擇的相同按鈕樣式 */
+.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+/* 被選擇的按鈕樣式 */
+.selected-button {
+  background-color: #ecd4a8; /* 選擇後按鈕的背景顏色 */
+  color: white;
+}
